@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="299"
+   name=""
+   committed-date="2006-03-17T19:07:28.212972Z"
+   url="https://svn.innerweb.novell.com/svn/pdes/branches/Common/wm/metacity/Gilouche/metacity-1"
+   last-author="jimmac"
+   kind="dir"
+   uuid="7b1d760a-4e01-0410-b397-efcc6499a5f1"
+   repos="https://svn.innerweb.novell.com/svn/pdes"
+   revision="370"/>
+<entry
+   committed-rev="232"
+   name="icon_close.png"
+   text-time="2006-03-17T18:10:27.000000Z"
+   committed-date="2006-02-22T14:06:45.947387Z"
+   checksum="aa3c576f97f951e89fcce9ee4b7d7718"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:26.000000Z"/>
+<entry
+   committed-rev="232"
+   name="icon_minimize_u.png"
+   text-time="2006-03-17T18:10:27.000000Z"
+   committed-date="2006-02-22T14:06:45.947387Z"
+   checksum="a815741f4b68fb1e16b188e4b9dd7f4b"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:26.000000Z"/>
+<entry
+   committed-rev="232"
+   name="icon_maximize_u.png"
+   text-time="2006-03-17T18:10:27.000000Z"
+   committed-date="2006-02-22T14:06:45.947387Z"
+   checksum="31b6bd7125ee75941f0a7b577d76ca29"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:26.000000Z"/>
+<entry
+   committed-rev="232"
+   name="icon_restore_u.png"
+   text-time="2006-03-17T18:10:27.000000Z"
+   committed-date="2006-02-22T14:06:45.947387Z"
+   checksum="293e8b85e3bc82e1026bdc945eca0ac5"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:26.000000Z"/>
+<entry
+   committed-rev="232"
+   name="icon_close_u.png"
+   text-time="2006-03-17T18:10:27.000000Z"
+   committed-date="2006-02-22T14:06:45.947387Z"
+   checksum="861881cfb631a1f1dd405068b9d7b2b9"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:26.000000Z"/>
+<entry
+   committed-rev="232"
+   name="icon_minimize.png"
+   text-time="2006-03-17T18:10:27.000000Z"
+   committed-date="2006-02-22T14:06:45.947387Z"
+   checksum="15adc88c2dbe36890cf9c15f58bab127"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:26.000000Z"/>
+<entry
+   committed-rev="299"
+   name="metacity-theme-1.xml"
+   text-time="2006-03-17T19:06:09.000000Z"
+   committed-date="2006-03-17T19:07:28.212972Z"
+   checksum="05d2688c06463c068bf26ae4729b2a65"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:26.000000Z"/>
+<entry
+   committed-rev="232"
+   name="stripes.png"
+   text-time="2006-03-17T18:10:27.000000Z"
+   committed-date="2006-02-22T14:06:45.947387Z"
+   checksum="6ad2523350d2d556cddc8b11a4897fc8"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:26.000000Z"/>
+<entry
+   committed-rev="232"
+   name="icon_maximize.png"
+   text-time="2006-03-17T18:10:27.000000Z"
+   committed-date="2006-02-22T14:06:45.947387Z"
+   checksum="e78ad6fb8448af3887ea1bbee566a2c8"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:27.000000Z"/>
+<entry
+   committed-rev="232"
+   name="icon_restore.png"
+   text-time="2006-03-17T18:10:27.000000Z"
+   committed-date="2006-02-22T14:06:45.947387Z"
+   checksum="60ad5f3ee0376782b03ed5c9588aabc7"
+   last-author="jimmac"
+   kind="file"
+   prop-time="2006-03-17T18:10:27.000000Z"/>
+</wc-entries>

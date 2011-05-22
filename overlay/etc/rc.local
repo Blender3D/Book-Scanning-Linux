@@ -1,0 +1,4 @@
+#!/bin/sh
+
+useradd -m -u 1000 -g users -G storage,floppy,optical,audio,video,network,games,wheel,disk,nopasswdlogin -d /home/induction induction
+sudo -u induction xdg-user-utils
