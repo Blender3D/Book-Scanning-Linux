@@ -1,0 +1,27 @@
+install ()
+{
+    MODULES="cdrom ide-cd_mod ide-core ide-generic aufs squashfs isofs loop $(all_modules '/kernel/fs' | grep -v "nls") "
+    MODULES="${MODULES} $(checked_modules "/usb/host" | grep -ve "_cs" -e "sl811-hcd" -e "isp116x-hcd")"
+    MODULES=$(echo ${MODULES}) #trim whitespace
+    if [ "x${MODULES}" != "x" ]; then
+        MODULES="${MODULES} usb_storage sd_mod sr_mod"
+    fi
+    MODULES="${MODULES} virtio_pci virtio_blk"
+
+    BINARIES=""
+    FILES=""
+    add_dir /rw_branch
+    add_dir /ro_branch
+    add_dir /copytoram
+    add_dir /bootmnt
+
+    add_device /lib/udev/devices/loop0 b 7 0
+
+    add_binary /lib/udev/cdrom_id
+
+    add_file /lib/udev/rules.d/60-cdrom_id.rules
+
+    SCRIPT="archiso"
+}
+
+# vim:ft=sh:ts=4:sw=4:et:
