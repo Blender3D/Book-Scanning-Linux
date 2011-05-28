@@ -3,17 +3,20 @@
 useradd -m -u 1000 -g users -G storage,floppy,optical,audio,video,network,games,wheel,disk,nopasswdlogin -d /home/induction induction
 sudo -u induction xdg-user-utils
 
-gconftool -s /apps/gedit-2/preferences/editor/auto_indent/auto_indent -t bool true
-gconftool -s /apps/gedit-2/preferences/editor/bracket_matching/bracket_matching -t bool true
-gconftool -s /apps/gedit-2/preferences/editor/colors/scheme -t string "oblivion"
-gconftool -s /apps/gedit-2/preferences/editor/current_line/highlight_current_line -t bool true
-gconftool -s /apps/gedit-2/preferences/editor/font/editor_font -t string "Inconsolata Medium 12"
-gconftool -s /apps/gedit-2/preferences/editor/font/use_default_font -t bool false
-gconftool -s /apps/gedit-2/preferences/editor/tabs/insert_spaces -t bool true
-gconftool -s /apps/gedit-2/preferences/editor/tabs/tabs_size -t int 2
+gconftool-2 -s /apps/gedit-2/preferences/editor/auto_indent/auto_indent -t bool true
+gconftool-2 -s /apps/gedit-2/preferences/editor/bracket_matching/bracket_matching -t bool true
+gconftool-2 -s /apps/gedit-2/preferences/editor/colors/scheme -t string "oblivion"
+gconftool-2 -s /apps/gedit-2/preferences/editor/current_line/highlight_current_line -t bool true
+gconftool-2 -s /apps/gedit-2/preferences/editor/font/editor_font -t string "Inconsolata Medium 12"
+gconftool-2 -s /apps/gedit-2/preferences/editor/font/use_default_font -t bool false
+gconftool-2 -s /apps/gedit-2/preferences/editor/tabs/insert_spaces -t bool true
+gconftool-2 -s /apps/gedit-2/preferences/editor/tabs/tabs_size -t int 2
 
-gconftool -s /apps/gnome-terminal/profiles/Default/background_color -t string "#2E2E34343636"
-gconftool -s /apps/gnome-terminal/profiles/Default/foreground_color -t string "#FFFFFFFFFFFF"
-gconftool -s /apps/gnome-terminal/profiles/Default/font -t string "Inconsolata Medium 12"
+gconftool-2 -s /apps/gnome-terminal/profiles/Default/background_color -t string "#2E2E34343636"
+gconftool-2 -s /apps/gnome-terminal/profiles/Default/foreground_color -t string "#FFFFFFFFFFFF"
+gconftool-2 -s /apps/gnome-terminal/profiles/Default/font -t string "Inconsolata Medium 12"
+
+gconftool-2 -s /desktop/gnome/lockdown/disable_lock_screen -t bool true
+gconftool-2 -s /desktop/gnome/lockdown/disable_user_switching -t bool true
 
 /bin/plymouth quit --retain-splash
