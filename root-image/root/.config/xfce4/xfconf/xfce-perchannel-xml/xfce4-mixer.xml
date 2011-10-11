@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-mixer" version="1.0">
+  <property name="volume-step-size" type="uint" value="5"/>
+  <property name="active-card" type="string" value="HDANVidiaAlsamixer"/>
+  <property name="sound-card" type="string" value="PlaybackInternalAudioAnalogStereoPulseAudioMixer"/>
+  <property name="sound-cards" type="empty">
+    <property name="HDANVidiaAlsamixer" type="array">
+      <value type="string" value="Master"/>
+      <value type="string" value="Headphone"/>
+      <value type="string" value="Front Mic"/>
+      <value type="string" value="Capture"/>
+    </property>
+    <property name="PlaybackInternalAudioAnalogStereoPulseAudioMixer" type="array">
+      <value type="string" value="Master"/>
+    </property>
+  </property>
+  <property name="window-height" type="int" value="400"/>
+  <property name="window-width" type="int" value="666"/>
+</channel>

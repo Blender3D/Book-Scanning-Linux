@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="panels" type="uint" value="1">
+    <property name="panel-0" type="empty">
+      <property name="position" type="string" value="p=8;x=640;y=1011"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="24"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="3"/>
+        <value type="int" value="4"/>
+        <value type="int" value="6"/>
+        <value type="int" value="5"/>
+      </property>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-4" type="string" value="pager">
+      <property name="digital-format" type="string" value="%a %I:%M %p"/>
+      <property name="tooltip-format" type="string" value="%A %B %d, %Y"/>
+      <property name="show-frame" type="bool" value="false"/>
+    </property>
+    <property name="plugin-3" type="string" value="tasklist">
+      <property name="show-frame" type="bool" value="false"/>
+    </property>
+    <property name="plugin-1" type="string" value="applicationsmenu">
+      <property name="button-title" type="string" value="Arch Linux"/>
+      <property name="show-tooltips" type="bool" value="true"/>
+      <property name="button-icon" type="string" value="/usr/share/archlinux/icons/archlinux-icon-tango-16.svg"/>
+      <property name="show-button-title" type="bool" value="true"/>
+    </property>
+    <property name="plugin-5" type="string" value="clock">
+      <property name="digital-format" type="string" value="%a %I:%M %p"/>
+      <property name="tooltip-format" type="string" value="%A %B %d, %Y"/>
+      <property name="show-frame" type="bool" value="false"/>
+    </property>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="names-visible" type="array">
+        <value type="string" value="thunar"/>
+        <value type="string" value="quod libet"/>
+        <value type="string" value="task manager"/>
+        <value type="string" value="pidgin"/>
+      </property>
+    </property>
+  </property>
+</channel>
