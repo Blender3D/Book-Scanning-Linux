@@ -1,9 +1,0 @@
-location:/usr/share/applications/google-chrome.desktop
-location:/usr/share/applications/thunderbird.desktop
-location:/usr/share/applications/rhythmbox.desktop
-location:/usr/share/applications/empathy.desktop
-separator
-location:/usr/share/applications/gnome-terminal.desktop
-location:/usr/share/applications/gedit.desktop
-location:/usr/share/applications/gcalctool.desktop
-location:/usr/share/applications/brasero.desktop
