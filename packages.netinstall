@@ -1,5 +1,4 @@
 jshon
-packer
 sudo
 xorg-server
 xorg-xinit
@@ -98,11 +97,13 @@ xfce4-xkb-plugin
 
 xfwm4-theme-axiom
 
-geany-svn
-geany-plugins-svn
+geany
+geany-plugins
 viewnior
 evince2-light
 file-roller2-nn
+
+shutter
 
 gksu
 gamin
@@ -131,17 +132,17 @@ gstreamer0.10-python
 gstreamer0.10-ugly
 gstreamer0.10-ugly-plugins
 
+wicd
+wicd-gtk
+
 openssh
 
 abiword
 abiword-plugins
 
-gnumeric
 thunderbird
 firefox
-transmission-gtk
 flashplugin
 openjdk6
 icedtea-web
 lightdm
-lighttpd

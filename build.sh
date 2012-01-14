@@ -38,9 +38,7 @@ make_customize_root_image() {
         mkdir -p ${work_dir}/root-image/etc/pacman.d
         wget -O ${work_dir}/root-image/etc/pacman.d/mirrorlist http://www.archlinux.org/mirrorlist/all/
         sed -i "s/#Server/Server/g" ${work_dir}/root-image/etc/pacman.d/mirrorlist
-        chroot ${work_dir}/root-image /usr/sbin/locale-gen
-        chroot ${work_dir}/root-image /usr/sbin/useradd -m -p "" -g users -G "audio,lp,optical,storage,video,wheel,games,power,scanner" induction
-        chroot ${work_dir}/root-image /usr/bin/echo "induction" | chroot ${work_dir}/root-image /usr/bin/passwd --stdin induction
+        chroot ${work_dir}/root-image post-install
         : > ${work_dir}/build.${FUNCNAME}
     fi
 }

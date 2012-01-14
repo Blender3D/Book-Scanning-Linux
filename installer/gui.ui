@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
-    <height>598</height>
+    <width>913</width>
+    <height>592</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,13 +15,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <property name="horizontalSpacing">
-     <number>0</number>
-    </property>
-    <property name="margin">
-     <number>0</number>
-    </property>
-    <item row="0" column="0">
+    <item row="0" column="0" colspan="2">
      <widget class="QLabel" name="label">
       <property name="minimumSize">
        <size>
@@ -38,11 +32,119 @@
 }</string>
       </property>
       <property name="text">
-       <string>Induction Linux Setup</string>
+       <string>Header Text</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
+     <widget class="QInstallProgress" name="progressList">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::NoSelection</enum>
+      </property>
+      <property name="autoExpandDelay">
+       <number>1</number>
+      </property>
+      <property name="indentation">
+       <number>0</number>
+      </property>
+      <property name="itemsExpandable">
+       <bool>false</bool>
+      </property>
+      <property name="animated">
+       <bool>true</bool>
+      </property>
+      <attribute name="headerVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Step</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>Introduction</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Disk Setup</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Install Destination</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Swap Partition</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>User Accounts</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Default Software</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Web</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Multimedia</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Development</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Office</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>Installation</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>All Done</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="1" column="1">
      <widget class="QStackedWidget" name="contentWidget">
       <property name="currentIndex">
        <number>0</number>
@@ -339,222 +441,608 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="page">
+       <layout class="QGridLayout" name="gridLayout_13">
+        <item row="0" column="0">
+         <widget class="QLabel" name="diskSpaceWarning_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'DejaVu LGC Sans';&quot;&gt;You can configure Induction's default applications here. If you are fine with the defaults, just click the &lt;/span&gt;&lt;span style=&quot; font-family:'DejaVu LGC Sans'; font-weight:600;&quot;&gt;Skip&lt;/span&gt;&lt;span style=&quot; font-family:'DejaVu LGC Sans';&quot;&gt; button.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::RichText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="content6">
        <layout class="QGridLayout" name="gridLayout_14">
         <item row="0" column="0">
          <widget class="QFrame" name="frame_7">
-          <layout class="QGridLayout" name="gridLayout_13">
+          <layout class="QFormLayout" name="formLayout_2">
            <item row="0" column="0">
-            <widget class="QLabel" name="diskSpaceWarning_2">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
+            <widget class="QLabel" name="webBrowserLabel">
              <property name="text">
-              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'DejaVu LGC Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans';&quot;&gt;Since There are many different types of people, there are many types of web browsers available to install for Induction Linux.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans';&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans';&quot;&gt;Choose from some of the most common ones listed below (don't choose a web browser if your desired browser isn't listed here, as it can be installed once the system is running).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="textFormat">
-              <enum>Qt::RichText</enum>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-             </property>
-             <property name="wordWrap">
-              <bool>true</bool>
+              <string>Web Browser</string>
              </property>
             </widget>
            </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="webBrowserComboBox">
+             <item>
+              <property name="text">
+               <string>Mozilla Firefox</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Mozilla Nightly</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Opera</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Google Chrome (stable)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Google Chrome (beta)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Google Chrome (dev)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Chromium (stable)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Chromium (beta)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Chromium (dev)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Midori</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Jumanji</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Links</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Dillo</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Uzbl</string>
+              </property>
+             </item>
+            </widget>
+           </item>
            <item row="1" column="0">
+            <widget class="QLabel" name="mailClientLabel">
+             <property name="text">
+              <string>Mail Client</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="mailClientComboBox">
+             <item>
+              <property name="text">
+               <string>Mozilla Thunderbird</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Mozilla Thunderbird (nightly)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Postler</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Claws Mail</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Sylpheed</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="bitTorrentClientLabel">
+             <property name="text">
+              <string>BitTorrent Client</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="bitTorrentClientComboBox">
+             <item>
+              <property name="text">
+               <string>Transmission</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Deluge</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>qBittorrent</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>rTorrent</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Vuze</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="chatClientLabel">
+             <property name="text">
+              <string>Chat Client</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="chatClientComboBox">
+             <item>
+              <property name="text">
+               <string>Pidgin</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Gajim</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>XChat</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <layout class="QGridLayout" name="gridLayout_15">
+        <item row="0" column="0">
+         <widget class="QFrame" name="frame_8">
+          <layout class="QFormLayout" name="formLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="documentReaderLabel">
+             <property name="text">
+              <string>Document Reader</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="documentReaderComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>(none)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Evince</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ePDFView</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>llpp</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>zathura</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Xpdf</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MuPDF</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="musicPlayerLabel">
+             <property name="text">
+              <string>Music Player</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="musicPlayerComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>(none)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Banshee</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Quod Libet</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Amarok</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Clementine</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>DeaDBeeF</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Exaile</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Nightingale</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="videoPlayerLabel">
+             <property name="text">
+              <string>Video Player</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="videoPlayerComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>(none)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Parole</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>VLC</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="imageViewerLabel">
+             <property name="text">
+              <string>Image Viewer</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="imageViewerComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>(none)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Viewnior</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Feh</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>GpicView</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ristretto</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Eye of GNOME</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <layout class="QGridLayout" name="gridLayout_16">
+        <item row="0" column="0">
+         <widget class="QFrame" name="frame_9">
+          <layout class="QFormLayout" name="formLayout_3">
+           <item row="0" column="0">
+            <widget class="QLabel" name="textEditorLabel">
+             <property name="text">
+              <string>Text Editor</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="textEditorComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>(none)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Geany</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Leafpad</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Gedit</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Bluefish</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Beaver</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>SciTE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>cssed</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="wordProcessorLabel">
+             <property name="text">
+              <string>Word Processor</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="wordProcessorComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>(none)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Abiword</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LibreOffice Writer</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="spreadsheetEditorLabel">
+             <property name="text">
+              <string>Spreadsheet Editor</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="spreadsheetEditorComboBox">
+             <property name="currentIndex">
+              <number>1</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>(none)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Gnumeric</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LibreOffice Calc</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_4">
+       <layout class="QGridLayout" name="gridLayout_17">
+        <item row="0" column="0">
+         <widget class="QFrame" name="frame_10">
+          <layout class="QGridLayout" name="gridLayout_18">
+           <item row="0" column="0" colspan="2">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>If you would like to install any additional packages through this installer, feel free to add them below. One package per line.</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Official Packages</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPlainTextEdit" name="plainTextEdit">
+               <property name="font">
+                <font>
+                 <family>Inconsolata</family>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="1">
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>AUR Packages</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPlainTextEdit" name="plainTextEdit_2">
+               <property name="font">
+                <font>
+                 <family>Inconsolata</family>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0" colspan="2">
             <spacer name="verticalSpacer">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
              </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>20</width>
-               <height>40</height>
+               <width>0</width>
+               <height>20</height>
               </size>
              </property>
             </spacer>
-           </item>
-           <item row="2" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <item>
-              <spacer name="horizontalSpacer_3">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QToolButton" name="midoriButton">
-               <property name="toolTip">
-                <string>Extremely leightweight Midori web browser</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/midori.png</normaloff>:/icons/icons/midori.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>64</width>
-                 <height>64</height>
-                </size>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="operaButton">
-               <property name="toolTip">
-                <string>Fast and feature-packed Opera</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/opera.png</normaloff>:/icons/icons/opera.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>64</width>
-                 <height>64</height>
-                </size>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="chromeButton">
-               <property name="toolTip">
-                <string>Google Chrome, the fastest web browser</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/google-chrome.png</normaloff>:/icons/icons/google-chrome.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>64</width>
-                 <height>64</height>
-                </size>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="epiphanyButton">
-               <property name="toolTip">
-                <string>GNOME's default Epiphany web browser</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/epiphany.png</normaloff>:/icons/icons/epiphany.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>64</width>
-                 <height>64</height>
-                </size>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="firefoxButton">
-               <property name="toolTip">
-                <string>Firefox, the most customizable</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/firefox.png</normaloff>:/icons/icons/firefox.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>64</width>
-                 <height>64</height>
-                </size>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-               <property name="autoRepeat">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="noBrowserButton">
-               <property name="toolTip">
-                <string>No web browser</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="resources.qrc">
-                 <normaloff>:/icons/icons/edit-delete.png</normaloff>:/icons/icons/edit-delete.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>64</width>
-                 <height>64</height>
-                </size>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
            </item>
           </layout>
          </widget>
@@ -563,7 +1051,7 @@ p, li { white-space: pre-wrap; }
       </widget>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="2" column="0" colspan="2">
      <widget class="QFrame" name="frame">
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
@@ -572,6 +1060,11 @@ p, li { white-space: pre-wrap; }
           <widget class="QPushButton" name="cancelButton">
            <property name="text">
             <string>&amp;Cancel</string>
+           </property>
+           <property name="icon">
+            <iconset theme="gtk-cancel">
+             <normaloff/>
+            </iconset>
            </property>
           </widget>
          </item>
@@ -596,12 +1089,22 @@ p, li { white-space: pre-wrap; }
            <property name="text">
             <string>&amp;Back</string>
            </property>
+           <property name="icon">
+            <iconset theme="back">
+             <normaloff/>
+            </iconset>
+           </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="forwardButton">
            <property name="text">
             <string>&amp;Start</string>
+           </property>
+           <property name="icon">
+            <iconset theme="next">
+             <normaloff/>
+            </iconset>
            </property>
           </widget>
          </item>
@@ -613,6 +1116,13 @@ p, li { white-space: pre-wrap; }
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QInstallProgress</class>
+   <extends>QTreeWidget</extends>
+   <header>QInstallProgress</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resources.qrc"/>
  </resources>

@@ -9,7 +9,7 @@ LastDetailsViewZoomLevel=THUNAR_ZOOM_LEVEL_SMALLER
 LastIconViewZoomLevel=THUNAR_ZOOM_LEVEL_NORMAL
 LastLocationBar=ThunarLocationEntry
 LastSeparatorPosition=143
-LastShowHidden=TRUE
+LastShowHidden=FALSE
 LastSidePane=ThunarShortcutsPane
 LastSortColumn=THUNAR_COLUMN_NAME
 LastSortOrder=GTK_SORT_ASCENDING
@@ -34,4 +34,3 @@ ShortcutsIconEmblems=TRUE
 ShortcutsIconSize=THUNAR_ICON_SIZE_SMALLER
 TreeIconEmblems=TRUE
 TreeIconSize=THUNAR_ICON_SIZE_SMALLEST
-

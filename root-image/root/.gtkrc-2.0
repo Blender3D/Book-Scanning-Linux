@@ -1,0 +1,17 @@
+gtk-theme-name = "Murrina Gilouche"
+gtk-icon-theme-name="elementary"
+
+style "xfdesktop-icon-view" {
+  XfdesktopIconView::label-alpha = 0
+  XfdesktopIconView::cell-padding = 0
+
+  base[NORMAL] = "#FFFFFF"
+  base[SELECTED] = "#71B9FF"
+  base[ACTIVE] = "#5A94CC"
+  
+  fg[NORMAL] = "#FFFFFF"
+  fg[SELECTED] = "#FFFFFF"
+  fg[ACTIVE] = "#FFFFFF"
+}
+
+widget_class "*XfdesktopIconView*" style "xfdesktop-icon-view"

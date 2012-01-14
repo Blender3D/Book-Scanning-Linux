@@ -12,13 +12,26 @@
     <property name="custom" type="empty">
       <property name="XF86Display" type="string" value="xfce4-display-settings --minimal"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
-      <property name="&lt;Control&gt;&lt;Alt&gt;Delete" type="string" value="xflock4"/>
       <property name="&lt;Control&gt;Escape" type="string" value="xfdesktop --menu"/>
       <property name="&lt;Alt&gt;F2" type="string" value="xfrun4"/>
       <property name="override" type="bool" value="true"/>
-      <property name="&lt;Control&gt;&lt;Alt&gt;t" type="string" value="terminal"/>
       <property name="&lt;Alt&gt;F3" type="string" value="xkill"/>
-      <property name="Print" type="string" value="xfce4-screenshooter"/>
+      <property name="XF86AudioStop" type="string" value="banshee --stop"/>
+      <property name="XF86AudioNext" type="string" value="banshee --next"/>
+      <property name="XF86AudioPrev" type="string" value="banshee --restart-or-previous"/>
+      <property name="XF86AudioPlay" type="string" value="banshee --toggle-playing"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="terminal">
+        <property name="startup-notify" type="bool" value="true"/>
+      </property>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Left" type="string" value="mouse left"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Right" type="string" value="mouse right"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Up" type="string" value="mouse up"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Down" type="string" value="mouse down"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;plus" type="string" value="mouse stepup"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;underscore" type="string" value="mouse stepdown"/>
+      <property name="&lt;Primary&gt;Return" type="string" value="mouse click"/>
+      <property name="Print" type="string" value="shutter --full"/>
+      <property name="&lt;Primary&gt;Print" type="string" value="shutter --select"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

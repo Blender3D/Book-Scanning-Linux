@@ -26,7 +26,7 @@
       <property name="show-frame" type="bool" value="false"/>
     </property>
     <property name="plugin-1" type="string" value="applicationsmenu">
-      <property name="button-title" type="string" value="Arch Linux"/>
+      <property name="button-title" type="string" value="Induction"/>
       <property name="show-tooltips" type="bool" value="true"/>
       <property name="button-icon" type="string" value="/usr/share/archlinux/icons/archlinux-icon-tango-16.svg"/>
       <property name="show-button-title" type="bool" value="true"/>

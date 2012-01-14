@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<channel name="xfce4-settings-editor" version="1.0">
-  <property name="window-width" type="int" value="1280"/>
-  <property name="window-height" type="int" value="975"/>
-  <property name="hpaned-position" type="int" value="200"/>
-</channel>

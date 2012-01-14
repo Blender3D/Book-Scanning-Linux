@@ -14,6 +14,9 @@ class StartQT4(QMainWindow):
       self.close()
   
   def forward(self):
+    self.ui.progressList.topLevelItem(self.ui.contentWidget.currentIndex()).setState(2)
+    self.ui.progressList.topLevelItem(self.ui.contentWidget.currentIndex() + 1).setState(1)
+    
     if self.firstStage:
       self.ui.forwardButton.setText('&Forward')
       self.ui.backButton.setEnabled(True)
@@ -22,6 +25,7 @@ class StartQT4(QMainWindow):
       self.firstStage = False
     else:
       self.ui.label.setText(self.headers[self.ui.contentWidget.currentIndex() + 1])
+      self.ui.progressList.setCurrentItem(self.ui.progressList.topLevelItem(self.ui.contentWidget.currentIndex() + 1))
       
       if self.ui.contentWidget.currentIndex() + 1 == 2:
         self.select_partition()
@@ -41,6 +45,9 @@ class StartQT4(QMainWindow):
         self.ui.contentWidget.setCurrentIndex(self.ui.contentWidget.currentIndex() + 1)
   
   def back(self):
+    self.ui.progressList.topLevelItem(self.ui.contentWidget.currentIndex()).setState(0)
+    self.ui.progressList.topLevelItem(self.ui.contentWidget.currentIndex() - 1).setState(1)
+    
     if self.ui.contentWidget.currentIndex() == 1:
       self.ui.contentWidget.setCurrentIndex(0)
       self.ui.backButton.setEnabled(False)

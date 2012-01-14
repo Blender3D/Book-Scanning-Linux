@@ -53,10 +53,13 @@ def list_partitions():
     partition.uuid = cond_match(r'UUID="((?:[^"\\]|\\.)*)"', line, 1)
     partition.type = cond_match(r'TYPE="((?:[^"\\]|\\.)*)"', line, 1)
     
-    handle = open('/sys/block/{0}/{1}/size'.format(partition.identifier.replace('/dev/', '').rstrip('0123456789'), partition.identifier.replace('/dev/', '')), 'r')
-    partition.size = int(handle.read()) * 512
-    handle.close()
-    
-    partitions.append(partition)
+    try:
+      handle = open('/sys/block/{0}/{1}/size'.format(partition.identifier.replace('/dev/', '').rstrip('0123456789'), partition.identifier.replace('/dev/', '')), 'r')
+      partition.size = int(handle.read()) * 512
+      handle.close()
+      
+      partitions.append(partition)
+    except:
+      pass
 
   return partitions
