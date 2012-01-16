@@ -11,47 +11,32 @@ work_dir=work
 out_dir=out
 verbose="-v"
 
-script_path=$(readlink -f ${0%/*})
+script_path=$(pwd)
 
 # Base installation (root-image)
 make_basefs() {
     mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -p "base" create
-    mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -p "memtest86+ syslinux mkinitcpio-nfs-utils nbd" create
+    mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -p "memtest86+ syslinux mkinitcpio-nfs-utils nbd curl" create
+    echo "Nothing to see here. Move along."
 }
 
 # Additional packages (root-image)
 make_packages() {
-    mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -p "$(grep -v ^# ${script_path}/packages.netinstall)" create
-}
-
-# Customize installation (root-image)
-make_customize_root_image() {
-    if [[ ! -e ${work_dir}/build.${FUNCNAME} ]]; then
-        cp -af ${script_path}/root-image ${script_path}/root-image-work
-        chown -Rf root:root ${script_path}/root-image-work
-        chmod -Rf 755 ${script_path}/root-image-work
-        cp -af ${script_path}/root-image-work/* ${script_path}/${work_dir}/root-image/
-        rm -R ${script_path}/root-image-work
-        
-        chmod 750 ${work_dir}/root-image/etc/sudoers.d
-        chmod 440 ${work_dir}/root-image/etc/sudoers.d/g_wheel
-        mkdir -p ${work_dir}/root-image/etc/pacman.d
-        wget -O ${work_dir}/root-image/etc/pacman.d/mirrorlist http://www.archlinux.org/mirrorlist/all/
-        sed -i "s/#Server/Server/g" ${work_dir}/root-image/etc/pacman.d/mirrorlist
-        chroot ${work_dir}/root-image post-install
-        : > ${work_dir}/build.${FUNCNAME}
-    fi
+    mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -p "$(grep -v ^# ${script_path}/packages.all)" create
 }
 
 # Copy mkinitcpio archiso hooks (root-image)
 make_setup_mkinitcpio() {
    if [[ ! -e ${work_dir}/build.${FUNCNAME} ]]; then
         local _hook
-        for _hook in archiso archiso_pxe_nbd archiso_loop_mnt; do
+        for _hook in archiso archiso_shutdown archiso_pxe_common archiso_pxe_nbd archiso_pxe_http archiso_pxe_nfs archiso_loop_mnt; do
             cp /lib/initcpio/hooks/${_hook} ${work_dir}/root-image/lib/initcpio/hooks
             cp /lib/initcpio/install/${_hook} ${work_dir}/root-image/lib/initcpio/install
         done
+        cp /lib/initcpio/install/archiso_kms ${work_dir}/root-image/lib/initcpio/install
+        cp /lib/initcpio/archiso_shutdown ${work_dir}/root-image/lib/initcpio
         cp /lib/initcpio/archiso_pxe_nbd ${work_dir}/root-image/lib/initcpio
+        cp ${script_path}/mkinitcpio.conf ${work_dir}/root-image/etc/mkinitcpio-archiso.conf
         : > ${work_dir}/build.${FUNCNAME}
    fi
 }
@@ -62,11 +47,8 @@ make_boot() {
         local _src=${work_dir}/root-image
         local _dst_boot=${work_dir}/iso/${install_dir}/boot
         mkdir -p ${_dst_boot}/${arch}
-        mkinitcpio \
-            -c ${script_path}/mkinitcpio.conf \
-            -b ${_src} \
-            -k /boot/vmlinuz-linux \
-            -g ${_dst_boot}/${arch}/archiso.img
+        mkarchroot -n -r "mkinitcpio -c /etc/mkinitcpio-archiso.conf -k /boot/vmlinuz-linux -g /boot/archiso.img" ${_src}
+        mv ${_src}/boot/archiso.img ${_dst_boot}/${arch}/archiso.img
         mv ${_src}/boot/vmlinuz-linux ${_dst_boot}/${arch}/vmlinuz
         cp ${_src}/boot/memtest86+/memtest.bin ${_dst_boot}/memtest
         cp ${_src}/usr/share/licenses/common/GPL2/license.txt ${_dst_boot}/memtest.COPYING
@@ -80,10 +62,12 @@ make_syslinux() {
         local _src_syslinux=${work_dir}/root-image/usr/lib/syslinux
         local _dst_syslinux=${work_dir}/iso/${install_dir}/boot/syslinux
         mkdir -p ${_dst_syslinux}
-        sed "s|%ARCHISO_LABEL%|${iso_label}|g;
-            s|%INSTALL_DIR%|${install_dir}|g;
-            s|%ARCH%|${arch}|g" ${script_path}/syslinux/syslinux.cfg > ${_dst_syslinux}/syslinux.cfg
-#        cp ${script_path}/syslinux/splash.png ${_dst_syslinux}
+        for _cfg in ${script_path}/syslinux/*.cfg; do
+            sed "s|%ARCHISO_LABEL%|${iso_label}|g;
+                 s|%INSTALL_DIR%|${install_dir}|g;
+                 s|%ARCH%|${arch}|g" ${_cfg} > ${_dst_syslinux}/${_cfg##*/}
+        done
+        #cp ${script_path}/syslinux/splash.png ${_dst_syslinux}
         cp ${_src_syslinux}/*.c32 ${_dst_syslinux}
         cp ${_src_syslinux}/*.com ${_dst_syslinux}
         cp ${_src_syslinux}/*.0 ${_dst_syslinux}
@@ -102,6 +86,23 @@ make_isolinux() {
         sed "s|%INSTALL_DIR%|${install_dir}|g" ${script_path}/isolinux/isolinux.cfg > ${work_dir}/iso/isolinux/isolinux.cfg
         cp ${work_dir}/root-image/usr/lib/syslinux/isolinux.bin ${work_dir}/iso/isolinux/
         cp ${work_dir}/root-image/usr/lib/syslinux/isohdpfx.bin ${work_dir}/iso/isolinux/
+        : > ${work_dir}/build.${FUNCNAME}
+    fi
+}
+
+# Customize installation (root-image)
+# NOTE: mkarchroot should not be executed after this function is executed, otherwise will overwrites some custom files.
+make_customize_root_image() {
+    if [[ ! -e ${work_dir}/build.${FUNCNAME} ]]; then
+        cp -af ${script_path}/root-image ${work_dir}
+        chmod 750 ${work_dir}/root-image/etc/sudoers.d
+        chmod 440 ${work_dir}/root-image/etc/sudoers.d/g_wheel
+        mkdir -p ${work_dir}/root-image/etc/pacman.d
+        wget -O ${work_dir}/root-image/etc/pacman.d/mirrorlist http://www.archlinux.org/mirrorlist/all/
+        sed -i "s/#Server/Server/g" ${work_dir}/root-image/etc/pacman.d/mirrorlist
+        
+        chroot ${work_dir}/root-image post-install
+        
         : > ${work_dir}/build.${FUNCNAME}
     fi
 }
@@ -130,9 +131,9 @@ make_core_repo() {
         mkdir -p ${work_dir}/repo-core-${arch}
         pacman -Sy
         _pkgs=$(comm -2 -3 <(pacman -Sql core | sort | sed 's@^@core/@') \
-                           <(grep -v ^# ${script_path}/core.exclude | sort | sed 's@^@core/@'))
+                           <(grep -v ^# ${script_path}/core.exclude.${arch} | sort | sed 's@^@core/@'))
         _urls=$(pacman -Sddp ${_pkgs})
-        pacman -Swdd --noconfirm ${_pkgs}
+        pacman -Swdd --noprogressbar --noconfirm ${_pkgs}
         for _url in ${_urls}; do
             _pkg_name=${_url##*/}
             _cached_pkg=/var/cache/pacman/pkg/${_pkg_name}
@@ -192,7 +193,7 @@ make_dual() {
         cp -a -l -f ${_src_one} ${work_dir}/dual
         cp -a -l -n ${_src_two} ${work_dir}/dual
         rm -f ${work_dir}/dual/iso/${install_dir}/aitab
-        rm -f ${work_dir}/dual/iso/${install_dir}/boot/syslinux/syslinux.cfg
+        rm -f ${work_dir}/dual/iso/${install_dir}/boot/syslinux/*.cfg
         if [[ ${_iso_type} == "core" ]]; then
             if [[ ! -e ${work_dir}/dual/iso/${install_dir}/any/repo-core-any.sfs ||
                   ! -e ${work_dir}/dual/iso/${install_dir}/i686/repo-core-i686.sfs ||
@@ -250,11 +251,11 @@ clean_dual ()
 make_common_single() {
     make_basefs
     make_packages
-    make_customize_root_image
     make_setup_mkinitcpio
     make_boot
     make_syslinux
     make_isolinux
+    make_customize_root_image
     make_lib_modules
     make_usr_share
     make_aitab $1

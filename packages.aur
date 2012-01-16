@@ -1,9 +1,25 @@
 elementary-icons
 evince2-light
 file-roller2-nn
-shutter
+
 
 libpng12
+
+perl-gtk2-imageview
+perl-gtk2-unique
+perl-image-exiftool
+perl-proc-simple
+perl-proc-processtable
+perl-net-dropbox-api
+perl-goo-canvas
+perl-file-copy-recursive
+perl-yaml-tiny
+perl-data-random
+perl-mouse
+perl-net-oauth
+
+shutter
+
 lightdm-gtk2
 
 packer

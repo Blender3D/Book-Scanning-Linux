@@ -1,5 +1,6 @@
 jshon
 sudo
+
 xorg-server
 xorg-xinit
 xorg-utils
@@ -60,6 +61,9 @@ thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 xfburn
+
+ttf-insonsolata
+ttf-droid
 
 elementary-icons
 
@@ -145,4 +149,4 @@ firefox
 flashplugin
 openjdk6
 icedtea-web
-lightdm
+lightdm-gtk2

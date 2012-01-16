@@ -10,7 +10,7 @@ for package in $(grep -v ^# packages.aur); do
     cd $package
     makepkg
     cd ../..
-    cp $package/$package/*.tar.xz ./packages/
+    cp $package/$package/*.pkg.tar.xz ./packages/
     rm -Rf $package
 done
 
