@@ -1,4 +1,4 @@
 #!/bin/sh
 
 locale-gen
-useradd -m -p "" -g users -G "audio,lp,optical,storage,video,wheel,games,power,scanner,camera,nopasswdlogin" induction
+useradd -m -p "" -g users -G "audio,lp,optical,storage,video,wheel,games,power,scanner,camera,nopasswdlogin" scanner

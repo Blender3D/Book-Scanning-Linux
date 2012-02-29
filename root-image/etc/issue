@@ -1,4 +1,5 @@
 [H[2J
-Induction Linux Live ISO (\l)
+Book Scanning Linux Live ISO (\l)
 \s-\r \m.
-Default login is "root" with no password.
+Root login is "root" with no password.
+Standard login is "scanner" with a blank password.

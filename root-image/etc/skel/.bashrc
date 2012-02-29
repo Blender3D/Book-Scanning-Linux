@@ -40,4 +40,4 @@ PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core
 
 PS1='\[\033[01;32m\]\u\[\033[01;34m\] \W \$\[\033[00m\] '
 
-echo -en "\e[1;37mInduction\033[00m \033[01;34mLinux\033[00m \e[1;37m`uname -m`\033[00m\n\n"
+echo -en "\e[1;37mBook Scanning\033[00m \033[01;34mLinux\033[00m \e[1;37m`uname -m`\033[00m\n\n"

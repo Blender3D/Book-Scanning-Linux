@@ -3,9 +3,9 @@
 set -e -u
 
 iso_name=induction
-iso_label="INDUCTION_$(date +%Y%m)"
+iso_label="BOOK_SCANNING_LINUX_$(date +%Y%m)"
 iso_version=$(date +%Y.%m.%d)
-install_dir=induction
+install_dir=book_scanning_linux
 arch=$(uname -m)
 work_dir=work
 out_dir=out
@@ -97,6 +97,8 @@ make_customize_root_image() {
         cp -af ${script_path}/root-image ${work_dir}
         chmod 750 ${work_dir}/root-image/etc/sudoers.d
         chmod 440 ${work_dir}/root-image/etc/sudoers.d/g_wheel
+        chown root:root -R ${work_dir}/root-image/etc
+        
         mkdir -p ${work_dir}/root-image/etc/pacman.d
         wget -O ${work_dir}/root-image/etc/pacman.d/mirrorlist http://www.archlinux.org/mirrorlist/all/
         sed -i "s/#Server/Server/g" ${work_dir}/root-image/etc/pacman.d/mirrorlist

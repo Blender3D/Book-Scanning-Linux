@@ -1,20 +1,15 @@
-[Terminal]
-row=2
-col=0
-
-[AbiWord]
-row=4
-col=0
-
-[Geany]
-row=3
-col=0
-
-[Thunderbird]
-row=1
-col=0
-
 [Firefox]
 row=0
 col=0
 
+[Scan Tailor]
+row=1
+col=0
+
+[Bindery]
+row=2
+col=0
+
+[Terminal]
+row=3
+col=0

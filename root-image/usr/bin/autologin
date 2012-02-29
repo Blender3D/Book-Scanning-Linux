@@ -1,2 +1,2 @@
 #!/bin/bash
-/bin/login -f root
+/bin/login -f scanner
