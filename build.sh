@@ -2,7 +2,7 @@
 
 set -e -u
 
-iso_name=induction
+iso_name=BSL
 iso_label="BOOK_SCANNING_LINUX_$(date +%Y%m)"
 iso_version=$(date +%Y.%m.%d)
 install_dir=book_scanning_linux

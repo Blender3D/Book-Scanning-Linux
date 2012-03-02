@@ -33,10 +33,18 @@
 #
 #tesseract-svn
 #djvu2pdf-latest
+#ruby-rmagick
 #jbig2enc-git
+
+#pdfbeads
+
 #djvubind-hg
 #bindery
 #scantailor-git
 
-libkeybinder
-minidjvu
+#libkeybinder
+#minidjvu
+
+#eog2
+
+plymouth

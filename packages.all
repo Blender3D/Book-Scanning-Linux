@@ -17,6 +17,7 @@ xf86-input-void
 xf86-video-apm
 xf86-video-ark
 xf86-video-ast
+xf86-video-ati
 xf86-video-chips
 xf86-video-cirrus
 xf86-video-dummy
@@ -39,6 +40,9 @@ xf86-video-vmware
 xf86-video-voodoo
 xf86-video-xgi
 xf86-video-xgixp
+xf86-video-nouveau
+
+plymouth
 
 exo
 garcon
@@ -103,9 +107,10 @@ xfwm4-theme-axiom
 
 geany
 geany-plugins
-viewnior
 evince2-light
 file-roller2-nn
+gnome-desktop2
+eog2
 
 shutter
 
@@ -120,9 +125,6 @@ graphicsmagick
 imagemagick
 
 ruby
-
-quodlibet
-quodlibet-plugins
 
 python-feedparser
 pulseaudio
@@ -180,17 +182,23 @@ xfce4-volumed
 
 tesseract-svn
 djvu2pdf-latest
+
+ruby-rmagick
 jbig2enc-git
+pdfbeads
+
 djvubind-hg
 bindery
 scantailor-git
 
 
 
-openssh
+openssl
 
-abiword
-abiword-plugins
+libreoffice-common
+libreoffice-en-US
+libreoffice-gnome
+libreoffice-writer
 
 thunderbird
 firefox

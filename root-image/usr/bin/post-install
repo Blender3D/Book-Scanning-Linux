@@ -1,4 +1,8 @@
 #!/bin/sh
 
 locale-gen
+
 useradd -m -p "" -g users -G "audio,lp,optical,storage,video,wheel,games,power,scanner,camera,nopasswdlogin" scanner
+
+plymouth-set-default-theme "spinfinity"
+mkinitcpio -p linux

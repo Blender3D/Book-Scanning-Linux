@@ -15,5 +15,5 @@ for package in $(grep -v ^# packages.aur); do
 done
 
 cd ./packages
-repo-add induction.db.tar.gz *.pkg.tar.xz
+repo-add book-scanning-linux.db.tar.gz *.pkg.tar.xz
 cd ..
